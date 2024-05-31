@@ -1,7 +1,6 @@
 package com.wellsfargo.holiday.client;
 
 import com.wellsfargo.holiday.model.HolidayAPIResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -28,12 +27,13 @@ public class HolidayClient {
     public HolidayClient(final RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
-      public boolean isDateAHoliday(final int year, final int month, final int day) {
+
+    public boolean isDateAHoliday(final int year, final int month, final int day) {
 
         //https://holidayapi.com/v1/holidays?country={countryCode}&key={key}&year={year}&month={month]&day={day}
         UriComponents uri = UriComponentsBuilder
-                  .fromHttpUrl(url)
-                  .buildAndExpand(COUNTRY_CODE, key, year, month, day);
+                .fromHttpUrl(url)
+                .buildAndExpand(COUNTRY_CODE, key, year, month, day);
 
         HolidayAPIResponse result = restTemplate.getForObject(uri.toUriString(), HolidayAPIResponse.class);
 

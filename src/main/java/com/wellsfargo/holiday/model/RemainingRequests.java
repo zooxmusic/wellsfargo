@@ -9,7 +9,6 @@ import lombok.Setter;
 
 /**
  * Model class representing the remaining requests for all Holiday API subscription plans (10k requests per month for the free plan and 1M for the paid plans).
- *
  */
 @JsonPropertyOrder({
         "used",

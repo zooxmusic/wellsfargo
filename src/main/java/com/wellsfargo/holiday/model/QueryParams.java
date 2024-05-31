@@ -9,7 +9,7 @@ import static com.wellsfargo.holiday.model.QueryParams.APIParameter.*;
 /**
  * This class is used to encapsulate the query parameters for the API call.
  * The methods can be chained together for easier and readable coding
- *
+ * <p>
  * This class also provides the following enums which is associated with the parameter values.
  * <ul>
  *     <li>{@link APIParameter} - enumeration of keys for allowed parameters</li>
@@ -77,6 +77,7 @@ public class QueryParams {
 
     /**
      * Return the query string
+     *
      * @return - return the query string
      */
     public String queryString() {
